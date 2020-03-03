@@ -3,11 +3,21 @@ const cacheName = 'v1';
 const resourcerstoPrecache = [
     '/',
     'index.html',
-    'index.css'
+    'index.css',
+    'service-worker.js',
+    '../src/components/CardList.js',
+    '../src/components/Card.js',
+    '../src/components/Scroll.js',
+    '../src/components/SearchBox.js',
+    '../src/containers/App.css',
+    '../src/containers/App.js',
+    '../src/containers/SEGA.woff',
+    '../index.js',
+    'favicon.ico'
 ];
 
 self.addEventListener('install', (event)=>{
-    event.waitUtil(
+    event.waitUntil(
         caches.open(cacheName)
             .then(cache => (cache.addAll(resourcerstoPrecache))),
     );
